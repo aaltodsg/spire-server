@@ -27,11 +27,11 @@ This line should return: ("ASDF"). Make sure it is the latest version by using a
     * (asdf:load-system :asdf)
 Should return: T. SBCL can now be exited with (quit)
 
-7) Confirm that the home folder of the project is configured. Under the current home directory, find (or make) directory: ~/.config/common-lisp/source-registry.conf.d
+7) Confirm that the home folder of the project is configured. Under the current home directory, find (or make) directory:
+    ~/.config/common-lisp/source-registry.conf.d
 In source-registry.conf.d create file: "spire.conf" with the path to the cloned "src" directory:
----
+
 (:directory "~/xx/yy/spire-server/src/")
----]
 
 8) Run SBCL and type:
 
