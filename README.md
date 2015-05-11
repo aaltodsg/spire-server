@@ -20,19 +20,29 @@ If everything is ok, using a browser to open "http://localhost:8080/openrdf-work
 
 5) Install Quicklisp.
 
-6) ASDF is also needed. Nowadays it is bundled with SBCL, but at least lately on Linux systems it has required activation. Run sbcl:
-    `$ sbcl`
+6) ASDF is also needed. Nowadays it is bundled with SBCL, but at least
+lately on Linux systems it has required activation. Run sbcl:
+
+    $ sbcl
+
 Load the module with:
+
     * (require "asdf")
+
 This line should return: ("ASDF"). Make sure it is the latest version by using asdf to load itself:
+
     * (asdf:load-system :asdf)
+
 Should return: T. SBCL can now be exited with (quit)
 
-7) Confirm that the home folder of the project is configured. Under the current home directory, find (or make) directory:
+7) Confirm that the home folder of the project is configured. Under
+the current home directory, find (or make) directory:
+
     ~/.config/common-lisp/source-registry.conf.d
+
 In source-registry.conf.d create file: "spire.conf" with the path to the cloned "src" directory:
 
-(:directory "~/xx/yy/spire-server/src/")
+    (:directory "~/xx/yy/spire-server/src/")
 
 8) Run SBCL and type:
 
