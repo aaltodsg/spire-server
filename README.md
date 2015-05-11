@@ -78,7 +78,8 @@ In source-registry.conf.d create file: "spire.conf" with the path to the cloned 
     * (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242)) 
 
 This should return the following object:
-    #<HUNCHENTOOT:EASY-ACCEPTOR (host *, port 4242)>
+
+    `#<HUNCHENTOOT:EASY-ACCEPTOR (host *, port 4242)>`
 
 At this point "spire.address.com:4242" should respond to a browser and the server should be happily up and running.
 
