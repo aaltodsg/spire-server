@@ -1,3 +1,29 @@
+# SPIRE Event Server
+
+SPIRE = Smart Parking for Intelligent Real-Estate, as research project
+running between 2013-2014. The repository contains two components:
+
+1) Server. Keeps data in an RDF graph using a Sesame
+server. Communicates with a mobile client (repository to be added in
+the near future) and infrastructure sensors. Contains functions for:
+* Client profile check and registration
+* View update including parking lot statuses and other destinations
+* Destination setting
+* Parking area info update (push)
+* Sensor input processing (both mobile clients and infra sensors)
+* End-user survey push
+
+2) Sensor polling loop. A specialized component for interfaces
+established between two infrastructure sensor providers, to
+periodically poll for new parking lot entry and exit events. Also
+contains code to download a picture of the parking area, if one is available.
+
+# Status of work
+
+The project has finished and the code in the repository is made
+available as-is. No development plans, no support and absolutely no
+guarantee of the code being suitable for any purpose.
+
 # Server Installation
 
 [Hint: In OS X most of these are available via homebrew. In Unix environments a package manager such as aptitude will do the same.]
@@ -60,3 +86,14 @@ If loading :spies complains about missing drakma / hunchentoot / cs-json, they c
     * (asdf:load-system :drakma)
     * (asdf:load-system :hunchentoot)
     * (asdf:load-system :cl-json)
+
+# Documentation
+
+Further information is available in the "SPIRE_EventServer.rtf"
+document in the repository root.
+
+A
+[conference publication](http://www.cs.hut.fi/~mjrinne/papers/its-europe2014/Mobile%20crowdsensing%20of%20parking%20space%20using%20geofencing%20and%20activity%20recognition%20-%20ITSEur2014.pdf)
+and an accompanying
+[presentation](http://www.cs.hut.fi/~mjrinne/papers/its-europe2014/Presentation%20-%20Mobile%20crowdsensing%20of%20parking%20space%20using%20geofencing%20and%20activity%20recognition%20-%20ITSEur2014.pdf)
+are also available.
