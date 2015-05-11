@@ -13,6 +13,7 @@
     $ java -jar start.jar
 
 If everything is ok, using a browser to open "http://localhost:8080/openrdf-workbench/repositories/NONE/repositories" (in the same machine, otherwise substitute "localhost" with the server address) should bring up the Sesame Workbench.
+
 [Hint: Jetty stops by pressing Ctrl-C.]
 
 4) Install SBCL.
@@ -20,7 +21,7 @@ If everything is ok, using a browser to open "http://localhost:8080/openrdf-work
 5) Install Quicklisp.
 
 6) ASDF is also needed. Nowadays it is bundled with SBCL, but at least lately on Linux systems it has required activation. Run sbcl:
-    $ sbcl
+    `$ sbcl`
 Load the module with:
     * (require "asdf")
 This line should return: ("ASDF"). Make sure it is the latest version by using asdf to load itself:
