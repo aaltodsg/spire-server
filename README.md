@@ -28,27 +28,35 @@ Please note especially that the server does not implement any security.
 
 # Server Installation
 
-[Hint: In OS X most of these are available via homebrew. In Unix environments a package manager such as aptitude will do the same.]
+[Hint: In OS X most of these are available via [homebrew](http://brew.sh/). In Unix environments a package manager such as aptitude will do the same.]
 
 1) Configure addresses and keys as needed. A list with file names and line numbers can be obtained by running (in the "src" directory):
 
     $ grep -nH 'INIT_CONFIG' *.lisp
 
-2) Install a Java servlet. Our system has been running on jetty-8.1.11.v20130520.
+2) Install a Java servlet. Our system has been running on [jetty](http://eclipse.org/jetty/)-8.1.11.v20130520.
 
-3) Get Sesame. From the Sesame package, copy "openrdf-sesame.war" and "openrdf-workbench.war" to directory "libexec/webapps" under Jetty. Test run Jetty by running (in the Jetty libexec directory):
+3) Get [Sesame](http://rdf4j.org/). From the Sesame package, copy "openrdf-sesame.war" and "openrdf-workbench.war" to directory "libexec/webapps" under Jetty. Test run Jetty by running (in the Jetty libexec directory):
 
     $ java -jar start.jar
 
-If everything is ok, using a browser to open "http://localhost:8080/openrdf-workbench/repositories/NONE/repositories" (in the same machine, otherwise substitute "localhost" with the server address) should bring up the Sesame Workbench.
+If everything is ok, using a browser to open "http://localhost:8080/openrdf-workbench/" (in the same machine, otherwise substitute "localhost" with the server address) should bring up the Sesame Workbench.
 
 [Hint: Jetty stops by pressing Ctrl-C.]
 
-4) Install SBCL.
+4) Create a new repository called "spire" in Sesame. Select the type
+of the repository as needed, a "Native Java Store" will do fine for testing.
 
-5) Install Quicklisp.
+5) To populate the repository with some user data, edit the sample
+SPARQL update file `init/spies_initialize.ru` as needed. Select
+"SPARQL Update" in the Sesame workbench and copy the file contents
+into the Update text box. Execute.
 
-6) ASDF is also needed. Nowadays it is bundled with SBCL, but at least
+6) Install [SBCL](http://www.sbcl.org/).
+
+7) Install [Quicklisp](https://www.quicklisp.org/beta/).
+
+8) [ASDF](https://common-lisp.net/project/asdf/) is also needed. Nowadays it is bundled with SBCL, but at least
 lately on Linux systems it has required activation. Run sbcl:
 
     $ sbcl
@@ -63,7 +71,7 @@ This line should return: ("ASDF"). Make sure it is the latest version by using a
 
 Should return: T. SBCL can now be exited with (quit)
 
-7) Confirm that the home folder of the project is configured. Under
+9) Confirm that the home folder of the project is configured. Under
 the current home directory, find (or make) directory:
 
     ~/.config/common-lisp/source-registry.conf.d
@@ -72,7 +80,7 @@ In source-registry.conf.d create file: "spire.conf" with the path to the cloned 
 
     (:directory "~/xx/yy/spire-server/src/")
 
-8) Run SBCL and type:
+10) Run SBCL and type:
 
     * (asdf:load-system :spies)
 [ A lot of style warnings follow. ]
