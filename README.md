@@ -1,7 +1,7 @@
 # SPIRE Event Server
 
-SPIRE = Smart Parking for Intelligent Real-Estate, as research project
-running between 2013-2014. The repository contains two components:
+[SPIRE = Smart Parking for Intelligent Real-Estate](https://www.hiit.fi/spire), a research project
+running between 2013-2014. This repository contains two components:
 
 1) Server. Keeps data in an RDF graph using a Sesame
 server. Communicates with a mobile client (repository to be added in
@@ -23,6 +23,8 @@ contains code to download a picture of the parking area, if one is available.
 The project has finished and the code in the repository is made
 available as-is. No development plans, no support and absolutely no
 guarantee of the code being suitable for any purpose.
+
+Please note especially that the server does not implement any security.
 
 # Server Installation
 

@@ -4,8 +4,11 @@ The SPIRE Event Service (SPIES):
 MIT-License: http://opensource.org/licenses/mit-license.html
 Copyright © 2014 Mikko Rinne.
 
-The following software packages are used either in installation or
-execution:
+The following software components are expected to be used either in installation or
+execution, but not incorporated or modified as parts of the package:
+
+Sesame (http://rdf4j.org/):
+BSD-style License: https://bitbucket.org/openrdf/sesame/
 
 SBCL (http://www.sbcl.org/history.html):
 BSD-style and public domain licenses
