@@ -16,7 +16,10 @@ the near future) and infrastructure sensors. Contains functions for:
 2) Sensor polling loop. A specialized component for interfaces
 established between two infrastructure sensor providers, to
 periodically poll for new parking lot entry and exit events. Also
-contains code to download a picture of the parking area, if one is available.
+contains code to download a picture of the parking area, if one is
+available.
+
+[The corresponding client](https://github.com/aaltodsg/spire-client) is available in github.
 
 # Status of work
 
@@ -24,7 +27,9 @@ The project has finished and the code in the repository is made
 available as-is. No development plans, no support and absolutely no
 guarantee of the code being suitable for any purpose.
 
-Please note especially that the server does not implement any security.
+Please note especially that the server does not implement any
+security. Furthermore no parameter checking of REST calls is done, so
+the current code is completely open to any SPARQL (Update!) injection attacks imaginable.
 
 # Server Installation
 
@@ -93,7 +98,7 @@ This should return the following object:
 
 At this point "spire.address.com:4242" should respond to a browser and the server should be happily up and running.
 
-If loading :spies complains about missing drakma / hunchentoot / cs-json, they can be loaded like this:
+If loading :spies complains about missing drakma / hunchentoot / cl-json, they can be loaded like this:
     * (asdf:load-system :drakma)
     * (asdf:load-system :hunchentoot)
     * (asdf:load-system :cl-json)
