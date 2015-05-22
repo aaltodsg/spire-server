@@ -19,7 +19,8 @@ periodically poll for new parking lot entry and exit events. Also
 contains code to download a picture of the parking area, if one is
 available.
 
-[The corresponding client](https://github.com/aaltodsg/spire-client) is available in github.
+[The corresponding client](https://github.com/aaltodsg/spire-client)
+is also available in github.
 
 # Status of work
 
@@ -88,7 +89,7 @@ Should return: T. If the above fails (asdf wasn't included afterall) simply load
     * (ql:quickload "cl-json")
     * (ql:quickload "cl-csv")
 
-SBCL can now be temporarily exited with (quit)
+SBCL can now be temporarily exited with `(quit)`
 
 11) Confirm that the home folder of the project is configured. Under
 the current home directory, find (or make) directory:
