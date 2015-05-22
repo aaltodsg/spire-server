@@ -110,14 +110,20 @@ This should return the following object:
 
     #<HUNCHENTOOT:EASY-ACCEPTOR (host *, port 4242)>
 
-At this point "spire.address.com:4242" should respond to a browser and the server should be happily up and running.
+At this point `curl "localhost:4242"` should respond with the hunchentoot
+default page and the server should be happily up and running.
 
 If loading :spies complains about missing drakma / hunchentoot / cl-json, they can be loaded like this:
     * (asdf:load-system :drakma)
     * (asdf:load-system :hunchentoot)
     * (asdf:load-system :cl-json)
 
-13) Add the proxy of choice (apache, Nginx, etc.) to access from outside.
+13) Add the proxy of choice (apache, Nginx, etc.) to access the
+service from outside. E.g. in apache 2.0 `sites-enabled`file the
+proxypasses may look like:
+
+    ProxyPass /spire http://127.0.0.1:4242/spire
+    ProxyPassReverse /spire http://127.0.0.1:4242/spire
 
 # Documentation
 
