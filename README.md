@@ -115,6 +115,7 @@ At this point `curl "localhost:4242"` should respond with the hunchentoot
 default page and the server should be happily up and running.
 
 If loading :spies complains about missing drakma / hunchentoot / cl-json, they can be loaded like this:
+
     * (asdf:load-system :drakma)
     * (asdf:load-system :hunchentoot)
     * (asdf:load-system :cl-json)
